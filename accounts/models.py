@@ -155,6 +155,9 @@ class User(AbstractBaseUser):
     def has_module_perms(self, app_label):
         return True
     
+    class Meta:
+        ordering = ('-id', )
+    
     
 # ---------------------------------------------------------------------------- #
 #                                  UserProfile                                 #
@@ -260,6 +263,6 @@ class UserProfile(models.Model):
         return str(self.user)
     
     class Meta:
-        ordering = ('id', )
+        ordering = ('-id', )
 
     
